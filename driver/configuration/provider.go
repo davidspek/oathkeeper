@@ -28,7 +28,6 @@ type MatchingStrategy string
 const (
 	Regexp                  MatchingStrategy = "regexp"
 	Glob                    MatchingStrategy = "glob"
-	Prefix                  MatchingStrategy = "prefix"
 	DefaultMatchingStrategy                  = Regexp
 )
 
@@ -61,6 +60,7 @@ type Provider interface {
 
 	AccessRuleRepositories() []url.URL
 	AccessRuleMatchingStrategy() MatchingStrategy
+	AcccessRulePrefixMatchingEnabled() bool
 
 	ProxyServeAddress() string
 	APIServeAddress() string
